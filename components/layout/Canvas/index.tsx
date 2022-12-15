@@ -2,7 +2,7 @@ type Props = {}
 
 const Canvas = (props: Props) => {
 	return (
-		<div>Canvas</div>
+		<div className="p-8 font-light">Canvas</div>
 	)
 }
 

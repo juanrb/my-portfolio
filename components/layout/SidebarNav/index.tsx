@@ -19,8 +19,8 @@ const SidebarNav = (props: Props) => {
 	]
 
 	return (
-		<div className={`bg-slate-400 font-extralight h-screen p-2 pt-7 ${open ? 'w-72' : 'w-14'} relative duration-300`}>
-			<BsArrowLeftShort onClick={() => setOpen(!open)} className={`text-gray-600 bg-white rounded-full absolute text-2xl -right-3 top-9 cursor-pointer hover:bg-slate-200 ${!open && 'rotate-180'}`} />
+		<div className={`bg-slate-400 shadow-lg shadow-slate-500 font-extralight h-screen p-2 pt-7 ${open ? 'w-72' : 'w-14'} relative duration-300`}>
+			<BsArrowLeftShort onClick={() => setOpen(!open)} className={`text-gray-600 bg-white rounded-full absolute text-2xl -right-3 top-9 cursor-pointer z-10 hover:bg-slate-200 ${!open && 'rotate-180'}`} />
 
 			<div className="inline-flex items-center">
 				<BsFillBarChartLineFill className="text-gray-600 text-4xl p-2 rounded-md" />
