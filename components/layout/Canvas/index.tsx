@@ -1,8 +1,10 @@
-type Props = {}
+type Props = {
+	children: React.ReactNode
+}
 
-const Canvas = (props: Props) => {
+const Canvas = ({ children }: Props) => {
 	return (
-		<div className="p-8 font-light">Canvas</div>
+		<div className="p-8 font-light">{children}</div>
 	)
 }
 
