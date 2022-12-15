@@ -1,5 +1,5 @@
 export const routes = {
-	dashboard: '/',
+	dashboard: '/dashboard',
 	extras: '/extras',
 	profile: '/profile',
 	settings: '/settings',
