@@ -22,7 +22,6 @@ const SidebarNav = (props: Props) => {
 	]
 	const isActive = useCallback((itemUrl: string) => router.pathname.endsWith(itemUrl), [router.pathname])
 
-	console.log(router)
 	return (
 		<div className={`bg-slate-400 shadow-lg shadow-slate-500 font-extralight flex flex-col static p-2 pt-7 ${open ? 'w-72' : 'w-14'} relative duration-300 ease-out`}>
 			<BsArrowLeftShort onClick={() => setOpen(!open)} className={`text-gray-600 bg-white rounded-full absolute text-2xl -right-3 top-9 cursor-pointer z-10 hover:bg-slate-200 ${!open && 'rotate-180'}`} />

@@ -14,7 +14,6 @@ type Props = {
 }
 
 const Dashboard = (props: Props) => {
-	// console.log(props)
 	return (
 		<AdminLayout>
 			<div className='grid gap-y-4'>
@@ -60,7 +59,7 @@ const Dashboard = (props: Props) => {
 export async function getServerSideProps(context: GetServerSidePropsContext): Promise<GetServerSidePropsResult<unknown>> {
 	const comments = await (await fetch("https://jsonplaceholder.typicode.com/comments")).json()
 
-	console.log(await XlsxExport({}))
+	await XlsxExport(context.res, {})
 
 	return {
 		props: {
