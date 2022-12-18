@@ -1,0 +1,135 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model artifacts {
+  id       Int     @id @unique(map: "id_UNIQUE") @db.UnsignedInt
+  name     String? @db.VarChar(64)
+  code     String? @db.VarChar(8)
+  group_id Int     @default(0) @db.MediumInt
+}
+
+model categories {
+  id          Int     @id @unique(map: "id_UNIQUE") @db.UnsignedInt
+  name        String? @db.VarChar(64)
+  description String? @db.Text
+}
+
+model customers {
+  id       Int     @id @unique(map: "id_UNIQUE") @default(autoincrement()) @db.UnsignedInt
+  name     String? @db.VarChar(64)
+  cuit     String? @db.VarChar(16)
+  address  String? @db.VarChar(64)
+  phone    String  @db.Text
+  discount Int     @default(0) @db.UnsignedTinyInt
+}
+
+model groups {
+  id          Int    @id @db.UnsignedMediumInt
+  name        String @db.VarChar(20)
+  description String @db.VarChar(100)
+}
+
+model invoices {
+  id             Int       @id @unique(map: "id_UNIQUE") @default(autoincrement()) @db.UnsignedInt
+  sold_parts_ids String?   @db.Text
+  discount       Int?      @db.SmallInt
+  iva            Boolean?
+  date           DateTime? @db.DateTime(0)
+  customer_id    Int?      @db.UnsignedInt
+  status         String    @db.Text
+}
+
+model login_attempts {
+  id         Int    @id @db.UnsignedInt
+  ip_address String @db.VarChar(15)
+  login      String @db.VarChar(100)
+  time       Int?   @db.UnsignedInt
+}
+
+model parts {
+  id            Int     @id @unique(map: "id_UNIQUE") @default(autoincrement()) @db.UnsignedSmallInt
+  name          String  @db.VarChar(64)
+  description   String  @db.Text
+  current_price Float   @db.Float
+  cat_id        Int     @db.SmallInt
+  art_id        Int     @db.SmallInt
+  enabled       Boolean
+  supplier_id   Int     @db.SmallInt
+  supply_id     Int     @db.SmallInt
+  featured      Boolean @default(false)
+}
+
+model prices_updates {
+  id        Int       @id @db.SmallInt
+  parts_ids String?   @db.Text
+  open      Boolean?
+  date      DateTime? @db.DateTime(0)
+  comments  String?   @db.Text
+}
+
+model settings {
+  id      Int    @id @db.UnsignedInt
+  json    String @db.Text
+  user_id Int    @unique(map: "user_id")
+}
+
+model sold_parts {
+  id            Int    @id @unique(map: "id_UNIQUE") @db.UnsignedInt
+  part_id       Int?   @db.SmallInt
+  qty           Int?   @db.SmallInt
+  current_price Float? @db.Float
+  invoice_id    Int?   @db.UnsignedInt
+}
+
+model stock {
+  id      Int  @id @unique(map: "id_UNIQUE") @default(autoincrement()) @db.UnsignedSmallInt
+  part_id Int? @db.SmallInt
+  count   Int? @db.SmallInt
+  min     Int? @db.SmallInt
+  max     Int  @db.SmallInt
+}
+
+model suppliers {
+  id   Int     @id @unique(map: "id_UNIQUE") @db.UnsignedSmallInt
+  name String? @db.VarChar(64)
+}
+
+model supplies {
+  id            Int     @id @default(autoincrement()) @db.UnsignedSmallInt
+  custom_id     String? @db.VarChar(16)
+  name          String? @db.VarChar(64)
+  current_price Float?  @db.Float
+  supplier_id   Int?    @db.SmallInt
+}
+
+model users {
+  id                      Int      @id @default(autoincrement()) @db.UnsignedInt
+  ip_address              String   @db.VarChar(15)
+  username                String?  @db.VarChar(100)
+  password                String   @db.VarChar(255)
+  salt                    String?  @db.VarChar(255)
+  email                   String   @db.VarChar(100)
+  activation_code         String?  @db.VarChar(40)
+  forgotten_password_code String?  @db.VarChar(40)
+  forgotten_password_time Int?     @db.UnsignedInt
+  remember_code           String?  @db.VarChar(40)
+  created_on              Int      @db.UnsignedInt
+  last_login              Int?     @db.UnsignedInt
+  active                  Boolean?
+  first_name              String?  @db.VarChar(50)
+  last_name               String?  @db.VarChar(50)
+  company                 String?  @db.VarChar(100)
+  phone                   String?  @db.VarChar(20)
+}
+
+model users_groups {
+  id       Int @id @default(autoincrement()) @db.UnsignedInt
+  user_id  Int @db.UnsignedInt
+  group_id Int @db.UnsignedMediumInt
+}
