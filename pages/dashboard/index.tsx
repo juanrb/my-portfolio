@@ -17,7 +17,7 @@ const Dashboard = (props: Props) => {
 	return (
 		<AdminLayout>
 			<div className='grid gap-y-4'>
-				<div className='grid grid-cols-4 gap-x-4'>
+				<div className='grid grid-cols-4 gap-4'>
 					<Card>
 						<div className='grid grid-col gap-2'>
 							<span className='uppercase text-xs text-gray-600'>AVERAGE SALES</span>
@@ -51,6 +51,7 @@ const Dashboard = (props: Props) => {
 					</Card>
 				</div>
 				<Card><Chart /></Card>
+				<Card><Chart /></Card>
 			</div>
 		</AdminLayout>
 	)
@@ -59,7 +60,7 @@ const Dashboard = (props: Props) => {
 export async function getServerSideProps(context: GetServerSidePropsContext): Promise<GetServerSidePropsResult<unknown>> {
 	const comments = await (await fetch("https://jsonplaceholder.typicode.com/comments")).json()
 
-	await XlsxExport(context.res, {})
+	// await XlsxExport(context.res, {})
 
 	return {
 		props: {

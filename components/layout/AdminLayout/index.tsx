@@ -15,7 +15,7 @@ const AdminLayout = ({ children, headTitle }: Props) => {
 				<SidebarNav />
 				<div className='flex flex-col w-full'>
 					<TopHeader />
-					<div className='p-8'>{children}</div>
+					<div className='p-8 overflow-scroll'>{children}</div>
 				</div>
 			</main>
 		</>
