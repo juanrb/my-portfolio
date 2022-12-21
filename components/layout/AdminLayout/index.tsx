@@ -1,6 +1,7 @@
 import Head from "next/head"
 import SidebarNav from "../SidebarNav"
 import TopHeader from "../TopHeader"
+import Tw from "./styles"
 
 type Props = {
 	children: React.ReactNode
@@ -11,13 +12,13 @@ const AdminLayout = ({ children, headTitle }: Props) => {
 	return (
 		<>
 			<Head><title>{headTitle || 'Dashboard | by juanchila'}</title></Head>
-			<main className="flex h-screen">
+			<Tw.Container>
 				<SidebarNav />
-				<div className='flex flex-col w-full'>
+				<Tw.ContentWrapper>
 					<TopHeader />
-					<div className='p-8 overflow-scroll'>{children}</div>
-				</div>
-			</main>
+					<Tw.Content>{children}</Tw.Content>
+				</Tw.ContentWrapper>
+			</Tw.Container>
 		</>
 	)
 }

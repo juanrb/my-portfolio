@@ -1,4 +1,5 @@
 import UserItem from "../UserItem"
+import Tw from "./styles"
 
 type Props = {
 	data: []
@@ -6,11 +7,11 @@ type Props = {
 
 const UserList = ({ data }: Props) => {
 	return (
-		<div>
+		<Tw.Container>
 			{data.map((user: any, i: number) => (
 				<UserItem key={i} data={user} />
 			))}
-		</div>
+		</Tw.Container>
 	)
 }
 

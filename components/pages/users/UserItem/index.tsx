@@ -1,15 +1,20 @@
+import Tw from "./styles"
+
 type Props = {
 	data: any
 }
 
 const UserItem = ({ data }: Props) => {
 	return (
-		<div className="grid grid-cols-4 p-2 border-b text-sm">
-			<span><span className="bg-slate-500 rounded-full p-1 font-medium mr-1">JD</span>{data.name}</span>
-			<span>{data.email}</span>
-			<span>{data.address.city}</span>
-			<span>{data.company.name}</span>
-		</div>
+		<Tw.Container>
+			<Tw.NameWrapper>
+				<Tw.Badge className="">JD</Tw.Badge>
+				<Tw.Name>{data.name}</Tw.Name>
+			</Tw.NameWrapper>
+			<Tw.Email>{data.email}</Tw.Email>
+			<Tw.City>{data.address.city}</Tw.City>
+			<Tw.Company>{data.company.name}</Tw.Company>
+		</Tw.Container>
 	)
 }
 

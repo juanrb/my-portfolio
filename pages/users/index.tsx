@@ -12,6 +12,7 @@ const Users = (props: Props) => {
 	isLoading && <div>Loading...</div>
 	isError && <div>Error</div>
 	console.log(isLoading, isError, data)
+
 	return (
 		<AdminLayout>
 			{data && <UserList data={data} />}
