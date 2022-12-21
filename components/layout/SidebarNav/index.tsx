@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react'
 import { BsArrowLeftShort, BsFillBarChartLineFill, BsSearch } from 'react-icons/bs'
 import { MdOutlineSpaceDashboard } from 'react-icons/md'
 import { BiLogOutCircle, BiUserCircle } from 'react-icons/bi'
-import { FiSettings } from 'react-icons/fi'
+import { FiSettings, FiUsers } from 'react-icons/fi'
 import { SiPluscodes } from 'react-icons/si'
 import { routes } from '../../../config/routes'
 import Link from 'next/link'
@@ -16,7 +16,8 @@ const SidebarNav = (props: Props) => {
 	const menuItems = [
 		{ title: 'Dashboard', icon: <MdOutlineSpaceDashboard className="text-xl" />, url: routes.dashboard },
 		{ title: 'Extras', icon: <SiPluscodes className="text-xl" />, url: routes.extras },
-		{ title: 'Profile', icon: <BiUserCircle className="text-xl" />, spacing: true, url: routes.profile },
+		{ title: 'Users', icon: <FiUsers className="text-xl" />, spacing: true, url: routes.users },
+		{ title: 'Profile', icon: <BiUserCircle className="text-xl" />, url: routes.profile },
 		{ title: 'Settings', icon: <FiSettings className="text-xl" />, url: routes.settings },
 		{ title: 'Logout', icon: <BiLogOutCircle className="text-xl" />, hoverClass: true, url: routes.logout, bottom: true },
 	]
