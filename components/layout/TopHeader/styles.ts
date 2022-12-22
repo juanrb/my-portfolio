@@ -1,5 +1,5 @@
-import tw from "tailwind-styled-components"
-import { FaUser } from "react-icons/fa"
+import tw from 'tailwind-styled-components'
+import { FaUser } from 'react-icons/fa'
 
 const Container = tw.div`
 	flex
@@ -25,5 +25,5 @@ const ProfileName = tw.span`
 	pl-2
 `
 
-const Tw = {Container, ProfileButton, ProfileIcon, ProfileName}
+const Tw = { Container, ProfileButton, ProfileIcon, ProfileName }
 export default Tw

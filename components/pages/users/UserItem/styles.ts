@@ -1,4 +1,4 @@
-import tw from "tailwind-styled-components"
+import tw from 'tailwind-styled-components'
 
 const Container = tw.div`
 	grid
@@ -34,5 +34,5 @@ const City = tw.span`
 const Company = tw.span`
 `
 
-const Tw = {Container, Badge, City, Company, Name, NameWrapper, Email}
+const Tw = { Container, Badge, City, Company, Name, NameWrapper, Email }
 export default Tw

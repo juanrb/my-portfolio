@@ -1,15 +1,15 @@
-import tw from "tailwind-styled-components"
-import {BsArrowLeftShort, BsFillBarChartLineFill} from "react-icons/bs"
+import tw from 'tailwind-styled-components'
+import { BsArrowLeftShort, BsFillBarChartLineFill } from 'react-icons/bs'
 
 interface SidebarProps {
-	$open: boolean
+  $open: boolean
 }
 
 const Container = tw.div<SidebarProps>`
 	flex
 	flex-col
 	relative
-	${p => p.$open ? 'w-72' : 'w-14'}
+	${(p) => (p.$open ? 'w-72' : 'w-14')}
 	p-2
 	pt-7
 	font-extralight
@@ -31,7 +31,7 @@ const Arrow = tw(BsArrowLeftShort)<SidebarProps>`
 	rounded-full
 	hover:bg-slate-200
 	cursor-pointer
-	${p => !p.$open && 'rotate-180'}
+	${(p) => !p.$open && 'rotate-180'}
 `
 
 const LogoContainer = tw.div`
@@ -50,7 +50,7 @@ const LogoTitle = tw.h1<SidebarProps>`
 	flex-nowrap
 	text-white
 	font-semibold
-	${p => !p.$open && 'scale-0'}
+	${(p) => !p.$open && 'scale-0'}
 	duration-300
 	origin-left
 `
@@ -64,17 +64,17 @@ const MenuItems = tw.ul`
 `
 
 interface MenuItemProps {
-	$bottom?: boolean
-	$hoverClass?: boolean
-	$active?: boolean
-	$open?: boolean
-	$spacing?: boolean
+  $bottom?: boolean
+  $hoverClass?: boolean
+  $active?: boolean
+  $open?: boolean
+  $spacing?: boolean
 }
 
 const MenuItem = tw.li<MenuItemProps>`
 	group
-	${p => !!p.$spacing && 'mt-5'}
-	${p => p.$bottom && 'mt-auto'}
+	${(p) => !!p.$spacing && 'mt-5'}
+	${(p) => p.$bottom && 'mt-auto'}
 	text-slate-200
 	hover:text-white
 	hover:bg-slate-500
@@ -84,16 +84,27 @@ const MenuItem = tw.li<MenuItemProps>`
 `
 
 const MenuItemIcon = tw.span<MenuItemProps>`
-	${p => p.$hoverClass ? 'group-hover:text-red-500' : 'group-hover:text-cyan-500'}
-	${p => p.$active && 'text-cyan-600'}
+	${(p) =>
+    p.$hoverClass ? 'group-hover:text-red-500' : 'group-hover:text-cyan-500'}
+	${(p) => p.$active && 'text-cyan-600'}
 `
 
 const MenuItemTitle = tw.span<MenuItemProps>`
 	pl-2
-	${p => p.$active && 'font-normal'}
+	${(p) => p.$active && 'font-normal'}
 	transition-opacity
-	${p => p.$open ? 'opacity-100' : 'opacity-0'}
+	${(p) => (p.$open ? 'opacity-100' : 'opacity-0')}
 `
 
-const Tw = {Container, Arrow, LogoContainer, Logo, LogoTitle, MenuItems, MenuItem, MenuItemIcon, MenuItemTitle}
+const Tw = {
+  Container,
+  Arrow,
+  LogoContainer,
+  Logo,
+  LogoTitle,
+  MenuItems,
+  MenuItem,
+  MenuItemIcon,
+  MenuItemTitle,
+}
 export default Tw

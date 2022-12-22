@@ -1,4 +1,4 @@
-import tw from "tailwind-styled-components"
+import tw from 'tailwind-styled-components'
 
 const Container = tw.div`
 	grid
@@ -6,6 +6,5 @@ const Container = tw.div`
 	gap-4
 `
 
-
-const Tw = {Container}
+const Tw = { Container }
 export default Tw

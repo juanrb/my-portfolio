@@ -1,4 +1,4 @@
-import tw from "tailwind-styled-components"
+import tw from 'tailwind-styled-components'
 
 const Container = tw.div`
 	flex
@@ -11,5 +11,5 @@ const Container = tw.div`
 	shadow-lg
 `
 
-const Tw = {Container}
+const Tw = { Container }
 export default Tw

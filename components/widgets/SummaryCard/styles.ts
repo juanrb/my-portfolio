@@ -1,4 +1,4 @@
-import tw from "tailwind-styled-components"
+import tw from 'tailwind-styled-components'
 
 const Container = tw.div`
 `
@@ -27,5 +27,5 @@ const IconWrapper = tw.div`
 	rounded-md
 `
 
-const Tw = {Container, DataWrapper, IconWrapper, DataTitle, DataValue}
+const Tw = { Container, DataWrapper, IconWrapper, DataTitle, DataValue }
 export default Tw
