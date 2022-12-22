@@ -2,7 +2,7 @@ import { GetServerSidePropsContext, GetServerSidePropsResult } from 'next'
 import { useQuery } from 'react-query'
 import AdminLayout from '../../components/layout/AdminLayout'
 import UserList from '../../components/pages/users/UserList'
-import users from '../../services'
+import users from '../../services/users'
 
 type Props = {}
 

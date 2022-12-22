@@ -1,7 +1,8 @@
+import { UserDto } from '../../../../services/users'
 import Tw from './styles'
 
 type Props = {
-  data: any
+  data: UserDto
 }
 
 const UserItem = ({ data }: Props) => {

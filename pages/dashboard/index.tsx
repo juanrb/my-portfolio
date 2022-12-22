@@ -6,8 +6,16 @@ import Card from '../../components/wrappers/Card'
 import Tw from './styles'
 import Summary from '../../components/pages/dashboard/Summary'
 
+type Comment = {
+  postId: number
+  id: number
+  name: string
+  email: string
+  body: string
+}
+
 type Props = {
-  comments: any
+  comments: Comment[]
 }
 
 const Dashboard = (_props: Props) => {
