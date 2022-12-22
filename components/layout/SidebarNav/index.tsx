@@ -1,5 +1,4 @@
 import { useCallback, useState } from 'react'
-import { BsArrowLeftShort, BsFillBarChartLineFill, BsSearch } from 'react-icons/bs'
 import { MdOutlineSpaceDashboard } from 'react-icons/md'
 import { BiLogOutCircle, BiUserCircle } from 'react-icons/bi'
 import { FiSettings, FiUsers } from 'react-icons/fi'
@@ -11,7 +10,7 @@ import Tw from './styles'
 
 type Props = {}
 
-const SidebarNav = (props: Props) => {
+const SidebarNav = (_props: Props) => {
 	const [open, setOpen] = useState(true)
 	const router = useRouter()
 	const menuItems = [

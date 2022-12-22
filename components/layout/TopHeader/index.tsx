@@ -1,9 +1,8 @@
-import { FaUser } from 'react-icons/fa'
 import Tw from "./styles"
 
 type Props = {}
 
-function TopHeader({ }: Props) {
+function TopHeader(_props: Props) {
 	return (
 		<Tw.Container>
 			<Tw.ProfileButton>

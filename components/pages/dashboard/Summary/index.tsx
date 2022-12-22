@@ -7,7 +7,7 @@ import SummaryCard from "../../../widgets/SummaryCard"
 
 type Props = {}
 
-const Summary = (props: Props) => {
+const Summary = (_props: Props) => {
 	return (
 		<Tw.Container>
 			<SummaryCard title="average sales" icon={<BiWorld />} value='$1,045.45' />

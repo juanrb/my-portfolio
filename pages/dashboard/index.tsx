@@ -10,7 +10,7 @@ type Props = {
 	comments: any
 }
 
-const Dashboard = (props: Props) => {
+const Dashboard = (_props: Props) => {
 	return (
 		<AdminLayout>
 			<Tw.Container>
@@ -22,7 +22,7 @@ const Dashboard = (props: Props) => {
 	)
 }
 
-export async function getServerSideProps(context: GetServerSidePropsContext): Promise<GetServerSidePropsResult<unknown>> {
+export async function getServerSideProps(_context: GetServerSidePropsContext): Promise<GetServerSidePropsResult<unknown>> {
 	const comments = await (await fetch("https://jsonplaceholder.typicode.com/comments")).json()
 
 	// await XlsxExport(context.res, {})

@@ -6,7 +6,7 @@ import users from "../../services"
 
 type Props = {}
 
-const Users = (props: Props) => {
+const Users = (_props: Props) => {
 	const { isLoading, isError, data } = useQuery(users().queryKey, users().queryFn)
 
 	isLoading && <div>Loading...</div>
@@ -20,7 +20,7 @@ const Users = (props: Props) => {
 	)
 }
 
-export async function getServerSideProps(context: GetServerSidePropsContext): Promise<GetServerSidePropsResult<unknown>> {
+export async function getServerSideProps(_context: GetServerSidePropsContext): Promise<GetServerSidePropsResult<unknown>> {
 
 	return {
 		props: {}, // will be passed to the page component as props
