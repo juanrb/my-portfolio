@@ -11,18 +11,22 @@ const Container = tw.div<SidebarProps>`
 	relative
 	${(p) => (p.$open ? 'w-72' : 'w-14')}
 	p-2
+	pl-2.5
 	pt-7
+	text-text
+	dark:text-text
 	font-extralight
-	bg-slate-400
+	bg-main
+	dark:bg-main
+	rounded-2xl
 	shadow-lg
-	shadow-slate-500
 	duration-300
 	ease-out
 `
 
 const Arrow = tw(BsArrowLeftShort)<SidebarProps>`
 	absolute
-	z-10
+	z-50
 	top-9
 	-right-3
 	text-2xl
@@ -41,14 +45,12 @@ const LogoContainer = tw.div`
 
 const Logo = tw(BsFillBarChartLineFill)`
 	p-2
-	text-gray-600
 	text-4xl
 	rounded-md
 `
 
 const LogoTitle = tw.h1<SidebarProps>`
 	flex-nowrap
-	text-white
 	font-semibold
 	${(p) => !p.$open && 'scale-0'}
 	duration-300
@@ -75,18 +77,18 @@ const MenuItem = tw.li<MenuItemProps>`
 	group
 	${(p) => !!p.$spacing && 'mt-5'}
 	${(p) => p.$bottom && 'mt-auto'}
-	text-slate-200
 	hover:text-white
-	hover:bg-slate-500
-	rounded
+	hover:bg-primary
+	hover:shadow-md
+	rounded-full
 	duration-100
 	cursor-pointer
 `
 
 const MenuItemIcon = tw.span<MenuItemProps>`
 	${(p) =>
-    p.$hoverClass ? 'group-hover:text-red-500' : 'group-hover:text-cyan-500'}
-	${(p) => p.$active && 'text-cyan-600'}
+		p.$hoverClass ? 'group-hover:text-red-500' : 'group-hover:text-white'}
+	${(p) => p.$active && 'text-accent'}
 `
 
 const MenuItemTitle = tw.span<MenuItemProps>`

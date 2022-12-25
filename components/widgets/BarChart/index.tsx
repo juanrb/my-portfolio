@@ -38,11 +38,11 @@ export const data = {
     {
       label: 'Dataset 2',
       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      backgroundColor: 'rgba(53, 162, 235, 0.5)',
+      backgroundColor: 'rgba(36, 127, 176, 0.5)',
     },
   ],
 }
 
-export function Chart() {
+export function BarChart() {
   return <Bar options={options} data={data} />
 }

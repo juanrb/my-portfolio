@@ -1,10 +1,18 @@
 import { GetServerSidePropsContext, GetServerSidePropsResult } from 'next'
+import { useTheme } from 'next-themes'
 import AdminLayout from '../../components/layout/AdminLayout'
 
 type Props = {}
 
 const Settings = (_props: Props) => {
-  return <AdminLayout>Settings</AdminLayout>
+  const { theme, setTheme } = useTheme()
+
+  return <AdminLayout>
+    <div>Settings</div>
+    <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+      {theme}
+    </button >
+  </AdminLayout >
 }
 
 export async function getServerSideProps(

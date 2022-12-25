@@ -12,7 +12,7 @@ const DataWrapper = tw.div`
 const DataTitle = tw.span`
 	uppercase
 	text-xs
-	text-gray-600
+	text-text
 `
 
 const DataValue = tw.span`

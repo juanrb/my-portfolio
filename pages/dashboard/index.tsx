@@ -1,10 +1,12 @@
 import { GetServerSidePropsContext, GetServerSidePropsResult } from 'next'
 
 import AdminLayout from '../../components/layout/AdminLayout'
-import { Chart } from '../../components/widgets/Chart'
+import { BarChart } from '../../components/widgets/BarChart'
+import { BubbleChart } from '../../components/widgets/BubbleChart'
 import Card from '../../components/wrappers/Card'
 import Tw from './styles'
 import Summary from '../../components/pages/dashboard/Summary'
+import { RadarChart } from '../../components/widgets/RadarChart'
 
 type Comment = {
   postId: number
@@ -23,12 +25,25 @@ const Dashboard = (_props: Props) => {
     <AdminLayout>
       <Tw.Container>
         <Summary />
-        <Card>
-          <Chart />
-        </Card>
-        <Card>
-          <Chart />
-        </Card>
+        <Tw.Efficiency>
+          <Card>
+            <RadarChart />
+          </Card>
+          <Card>
+            <RadarChart />
+          </Card>
+          <Card>
+            <RadarChart />
+          </Card>
+        </Tw.Efficiency>
+        <Tw.TotalSales>
+          <Card>
+            <BarChart />
+          </Card>
+          <Card>
+            <BubbleChart />
+          </Card>
+        </Tw.TotalSales>
       </Tw.Container>
     </AdminLayout>
   )

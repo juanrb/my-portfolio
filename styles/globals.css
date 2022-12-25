@@ -4,8 +4,36 @@
 
 @layer base {
   body {
-    @apply bg-gray-300;
-    //font-family: 'Nunito', sans-serif;
+    /* @apply bg-gray-300; */
     font-weight: lighter;
+  }
+
+  :root {
+    --color-main: 240 243 247;
+    --color-main-dimmed: 232 234 238;
+    --color-accent: 87 189 226;
+    --color-primary: 23 89 128;
+    --color-secondary: 247 147 34;
+    --color-text: 33 33 33;
+    --color-light: 41 53 52;
+    --color-success: 81 156 147;
+    --color-info: 41 146 193;
+    --color-warn: 250 174 57;
+    --color-error: 187 70 57;
+  }
+
+  :root[class="dark"] {
+    /* --color-main: 18 23 33; */
+    --color-main: 53 65 64;
+    --color-main-dimmed: 41 53 52;
+    --color-accent: 87 189 226;
+    --color-primary: 23 89 128;
+    --color-secondary: 85 96 99;
+    --color-text: 200 200 200;
+    --color-light: 240 243 247;
+    --color-success: 81 156 147;
+    --color-info: 51 181 229;
+    --color-warn: 250 174 57;
+    --color-error: 254 78 78;
   }
 }

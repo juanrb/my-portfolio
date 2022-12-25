@@ -6,9 +6,11 @@ const Container = tw.div`
 	justify-between
 	w-full
 	p-4
-	bg-slate-200
-	rounded-xl
-	shadow-lg
+	backdrop-blur-xl
+	bg-main/30
+	dark:bg-main/30
+	rounded-2xl
+	shadow-2xl
 `
 
 const Tw = { Container }
