@@ -7,10 +7,11 @@ type Props = {}
 const Settings = (_props: Props) => {
   const { theme, setTheme } = useTheme()
 
+  console.log(theme)
   return <AdminLayout>
     <div>Settings</div>
     <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
-      {theme}
+      switch theme
     </button >
   </AdminLayout >
 }

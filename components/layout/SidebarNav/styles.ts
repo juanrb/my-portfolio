@@ -93,7 +93,7 @@ const MenuItemIcon = tw.span<MenuItemProps>`
 
 const MenuItemTitle = tw.span<MenuItemProps>`
 	pl-2
-	${(p) => p.$active && 'font-normal'}
+	${(p) => p.$active && 'font-light'}
 	transition-opacity
 	${(p) => (p.$open ? 'opacity-100' : 'opacity-0')}
 `
