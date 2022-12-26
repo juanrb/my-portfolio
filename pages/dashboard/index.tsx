@@ -7,6 +7,8 @@ import Card from '../../components/wrappers/Card'
 import Tw from './styles'
 import Summary from '../../components/pages/dashboard/Summary'
 import { RadarChart } from '../../components/widgets/RadarChart'
+import { AreaChart } from '../../components/widgets/AreaChart'
+import { PieChart } from '../../components/widgets/PieChart'
 
 type Comment = {
   postId: number
@@ -30,10 +32,10 @@ const Dashboard = (_props: Props) => {
             <RadarChart />
           </Card>
           <Card>
-            <RadarChart />
+            <AreaChart />
           </Card>
           <Card>
-            <RadarChart />
+            <PieChart />
           </Card>
         </Tw.Efficiency>
         <Tw.TotalSales>
